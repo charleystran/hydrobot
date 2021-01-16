@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='text-4xl text-center text-white font-bold mb-6'>Current Readings</h1>
+
+<div data-controller='hello'>
+  <div class='w-4/5 mx-auto'>
+    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <li class="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col">
+          <figure class="highcharts-figure">
+            <div id="at_speedometer" data-measurement='<%= @reading.air_temperature.round(2) %>'></div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col">
+          <figure class="highcharts-figure">
+            <div id="humidity_speedometer" data-measurement='<%= @reading.humidity %>'></div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col">
+          <figure class="highcharts-figure">
+            <div id="tds_speedometer" data-measurement='<%= @reading.total_dissolved_solids %>'></div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col">
+          <figure class="highcharts-figure rounded-lg">
+            <div id="water_temp_speedometer" data-measurement='<%= @reading.water_temperature %>'></div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow divide-y divide-gray-200">
+        <div class="flex-1 flex flex-col">
+          <figure class="highcharts-figure rounded-lg">
+            <div id="ph_level_speedometer" data-measurement='<%= @reading.ph_level %>'></div>
+          </figure>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+

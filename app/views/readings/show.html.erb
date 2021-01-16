@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Air temperature:</strong>
+  <%= @reading.air_temperature %>
+</p>
+
+<p>
+  <strong>Water temperature:</strong>
+  <%= @reading.water_temperature %>
+</p>
+
+<p>
+  <strong>Humidity:</strong>
+  <%= @reading.humidity %>
+</p>
+
+<p>
+  <strong>Total dissolved solids:</strong>
+  <%= @reading.total_dissolved_solids %>
+</p>
+
+<p>
+  <strong>Ph level:</strong>
+  <%= @reading.ph_level %>
+</p>
+
+<%= link_to 'Edit', edit_reading_path(@reading) %> |
+<%= link_to 'Back', readings_path %>
