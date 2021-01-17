@@ -8,13 +8,6 @@ namespace :hydrobot do
       while (row = serialport.gets.chomp) do       # see note 2
         next if row.split(',').first.split('.').size > 2
         parts = row.split(',')
-        reading = Reading.create(air_temperature: parts[0].to_f,
-                              humidity: parts[1].to_f,
-                              total_dissolved_solids: parts[2].to_f,
-                              water_temperature: parts[3].to_f,
-                              ph_level: parts[4].to_f
-                             )
-
         data = {
           reading: {
             air_temperature: parts[0].to_f,
@@ -24,8 +17,8 @@ namespace :hydrobot do
             ph_level: parts[4].to_f
           }
         }
-        RestClient.post("#{Figaro.env.server_url}/readings", data)
-        puts reading.inspect
+        reading = RestClient.post("#{Figaro.env.server_url}/readings.json", data)
+        puts JSON.parse(reading).inspect
       end
     end
 
