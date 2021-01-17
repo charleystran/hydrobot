@@ -19,5 +19,6 @@ module Hydrobot
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.hosts << "charleystran.ngrok.io"
+    config.hosts << "hydrogardenbot.herokuapp.com"
   end
 end
