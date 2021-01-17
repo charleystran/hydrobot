@@ -5,11 +5,13 @@ ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'chartkick'
+gem 'figaro'
 gem 'hotwire-rails'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
+gem 'rest-client'
 gem 'rubyserial'
 gem 'sass-rails', '>= 6'
 gem 'simple_form'

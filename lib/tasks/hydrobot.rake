@@ -14,6 +14,17 @@ namespace :hydrobot do
                               water_temperature: parts[3].to_f,
                               ph_level: parts[4].to_f
                              )
+
+        data = {
+          reading: {
+            air_temperature: parts[0].to_f,
+            humidity: parts[1].to_f,
+            total_dissolved_solids: parts[2].to_f,
+            water_temperature: parts[3].to_f,
+            ph_level: parts[4].to_f
+          }
+        }
+        RestClient.post("#{Figaro.env.server_url}/readings", data)
         puts reading.inspect
       end
     end
