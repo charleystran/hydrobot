@@ -20,5 +20,6 @@ module Hydrobot
     # config.eager_load_paths << Rails.root.join("extras")
     config.hosts << "charleystran.ngrok.io"
     config.hosts << "hydrogardenbot.herokuapp.com"
+    config.hosts << "hydrobot-8ph2a.ondigitalocean.app"
   end
 end
